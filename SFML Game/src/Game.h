@@ -13,6 +13,9 @@ public:
 
 	Window* GetWindow();
 
+	sf::Time GetElapsed();
+	void RestartClock();
+
 private:
 	void MovePlayer();
 	Window m_window;
@@ -22,5 +25,8 @@ private:
 
 	sf::Vector2u m_size;
 	sf::Vector2i m_increment;
+
+	sf::Clock m_clock;
+	sf::Time m_elapsed;
 };
 
