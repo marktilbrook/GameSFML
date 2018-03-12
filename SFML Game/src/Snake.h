@@ -36,6 +36,8 @@ public:
 	void Lose(); //handle losing here
 	void ToggleLost();
 
+	Direction GetPhysicalDirection();
+
 	void Extend(); //make snake grow
 	void Reset(); //reset to starting pos
 	

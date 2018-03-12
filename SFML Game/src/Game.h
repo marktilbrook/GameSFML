@@ -1,8 +1,9 @@
 #pragma once
 #include <SFML\Graphics.hpp>
-#include "Window.h"
-class Game
-{
+#include "World.h"
+#include "Snake.h"
+
+class Game {
 public:
 	Game();
 	~Game();
@@ -11,22 +12,17 @@ public:
 	void Update();
 	void Render();
 
-	Window* GetWindow();
-
 	sf::Time GetElapsed();
 	void RestartClock();
 
+	Window* GetWindow();
 private:
-	void MovePlayer();
 	Window m_window;
-
-	sf::Texture m_texture;
-	sf::Sprite m_player;
-
-	sf::Vector2u m_size;
-	sf::Vector2i m_increment;
-
 	sf::Clock m_clock;
-	sf::Time m_elapsed;
+	float m_elapsed;
+
+	World m_world;
+	Snake m_snake;
+	//Textbox m_textbox;
 };
 
