@@ -1,28 +1,27 @@
 #pragma once
-#include <SFML\Graphics.hpp>
-#include "World.h"
-#include "Snake.h"
+#include "Window.h"
+#include "EventManager.h"
+#include <iostream>
 
 class Game {
 public:
 	Game();
 	~Game();
 
-	void HandleInput();
 	void Update();
 	void Render();
 
 	sf::Time GetElapsed();
 	void RestartClock();
 
+	void MoveSprite(EventDetails* l_details);
+
 	Window* GetWindow();
 private:
 	Window m_window;
-	sf::Clock m_clock;
-	float m_elapsed;
+	sf::Clock Clock;
 
-	World m_world;
-	Snake m_snake;
-	//Textbox m_textbox;
+	sf::Texture m_texture;
+	sf::Sprite m_sprite;
 };
 
